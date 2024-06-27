@@ -1,6 +1,7 @@
 # Flight-Delay-Analysis
 
 Introduction
+
 Flight delays have become a very important subject for air transportation all over the
 world because of the associated financial losses that the aviation industry is continuously
 going through.
@@ -19,10 +20,31 @@ your flight will be delayed before it comes up on the departure boards?
 In this project, I have used PySpark to explore data and visualize insights to answer
 some questions related to these flight delays. As a customer, we can stay informed about the
 airline we choose, and its delay expectancy.
-Dataset Description:
+
+**Introduction**
+Flight delays have become a very important subject for air transportation all over the
+world because of the associated financial losses that the aviation industry is continuously
+going through.
+These delays not only cause inconvenience to the airlines, but also to passengers.
+With the increased travel time comes and increase in expenses associated to food and
+lodging, this results in added stress among passengers, but this doesn't account for the
+growing distrust towards the airlines, who also suffer from extra costs such as those
+associated to their crews, aircraft repositioning, increased fuel consumption while trying to
+reduce their elapse time, and many others that tarnish the airlines reputation and often result
+in the loss of demand by passengers.
+The reasons for these delays vary a lot going from air congestion to weather
+conditions, mechanical problems, difficulties while boarding passengers, and simply the
+airline's inability to handle the demand given its capacity.
+So what can be done as a passenger to avoid delayed flights? Is it possible to know if
+your flight will be delayed before it comes up on the departure boards?
+In this project, I have used PySpark to explore data and visualize insights to answer
+some questions related to these flight delays. As a customer, we can stay informed about the
+airline we choose, and its delay expectancy.
+
+
+**Dataset Description:**
 The dataset was located from Kaggle [1], this dataset was collected from U.S
 department of transportation. The dataset tracks the performance of domestic flights within
-3
 the United States. This dataset has information about flights from 2018 to 2022, and it
 contains information about the flight's Year, Month, Day, Day Of Week, Airline, Flight
 Number , Tail Number, Origin Airport, Destination Airport, Scheduled Departure, Departure
@@ -30,16 +52,18 @@ Time, Departure Delay, Taxi Out, Wheels Off, Scheduled Time, Elapsed Time, Air T
 Distance,Wheels On, Taxi In, Scheduled Arrival, Arrival Time, Arrival Delay, Diverted,
 Cancelled, Cancellation Reason, Air System Delay, Security Delay, Airline Delay, Late
 Aircraft Delay, Weather Delay.
-Data Collection:
+
+
+**Data Collection:**
 To start the project, I obtained accurate data from Kaggle. I used Parquet files which
 facilitate faster retrieval of data. Here, we have accessed a total of 29,193,782 number of
 rows for the years 2018 to 2022 to complete this project. These parquet files were uploaded
 to an AWS S3 Bucket that was made publicly accessible. Next, I used the AWS S3 URL link
 in Databricks to extract the data and perform analysis and transformation. This made it
 possible for me to perform subsequent transformation and analysis on the data.
-4
-Architecture:
-Data Preparation:
+
+
+**Data Preparation:**
 1. Dropping Duplicate Rows: The code starts by removing any duplicate rows from
 the flights DataFrame to ensure that each observation is unique.
 2. Removing Rows with Null Departure or Arrival Time: It filters out rows where
@@ -69,7 +93,9 @@ DataFrame to provide an overview of its structure after the data cleaning operat
 These steps collectively ensure that the flights DataFrame is cleaned and prepared for
 further analysis, with invalid or missing data removed and relevant columns properly
 formatted. Once the data was collected, the next step was to prepare it for analysis.
-Data Analysis:
+
+
+**Data Analysis:**
  I used Pyspark to analyze all our data frames. The data analysis involved using
 various statistical techniques to gain insights. The analysis was carried out using Python
 6
@@ -105,7 +131,9 @@ One challenge I encountered during this phase was deciding which visualizations 
 create. With so much data, it was difficult to know which visualizations would be most
 informative. I overcame this challenge by reviewing the data analysis results and selecting the
 visualizations that best represented the insights gained.
-Visualization:
+
+
+**Visualization:**
 The different visualizations are provided below with an explanation for each of them –
 1. Total Delayed flights by Year
 This analysis provides valuable insights into the total flights that were delayed and
@@ -142,7 +170,9 @@ planes, however, there isn’t any significant information on diverted planes in
 This visualization is a heatmap of the percentage of delayed flights by year.
 7. Heatmap by Month
 This visualization is a heatmap of the percentage of delayed flights by month.
-Conclusion:
+
+
+**Conclusion:**
  The following are the conclusions derived -
 • The year 2020 had the least flight delays and this is most likely due to the global
 pandemic that started during that year and influenced the traveling.
@@ -169,6 +199,43 @@ difficulty in getting the code right, mining useful data from the dataset, and p
 visualizations. However, this did not stop me from completing this project.
 13
 Future Scope:
+ The future scope of this project is to use machine learning models like Logistic
+Regression, Decision Tree Classifier, Random Forest Regression and Linear Regression and
+its variant Boosted Linear Regression to predict the departure delay of flights. If given the
+right set of input parameters, even simple algorithms can predict the delays with high
+accuracy. Although good results were obtained, there is a huge scope for future work. If
+weather and air traffic control information is made available we can then go on to predict
+arrival delay even without the inclusion of departure delay as an attribute. Also, we can
+progress into predicting if a flight will be delayed or cancelled based on weather factors like
+snow, rain, storms and so on.
+References
+1. https://www.kaggle.com/datasets/robikscube/flight-delay-dataset-20182022
+2. https://docs.databricks.com/
+3. https://docs.aws.amazon.com/index.html
+4. https://community.cloud.databricks.com/?o=1327577811019730#notebook/39365843
+76938536/command/2004104969533133
+
+The dataset was located from Kaggle [1], this dataset was collected from U.S
+department of transportation. The dataset tracks the performance of domestic flights within
+the United States. This dataset has information about flights from 2018 to 2022, and it
+contains information about the flight's Year, Month, Day, Day Of Week, Airline, Flight
+Number , Tail Number, Origin Airport, Destination Airport, Scheduled Departure, Departure
+Time, Departure Delay, Taxi Out, Wheels Off, Scheduled Time, Elapsed Time, Air Time,
+Distance,Wheels On, Taxi In, Scheduled Arrival, Arrival Time, Arrival Delay, Diverted,
+Cancelled, Cancellation Reason, Air System Delay, Security Delay, Airline Delay, Late
+Aircraft Delay, Weather Delay.
+
+
+**Data Collection:**
+
+To start the project, I obtained accurate data from Kaggle. I used Parquet files which
+facilitate faster retrieval of data. Here, we have accessed a total of 29,193,782 number of
+rows for the years 2018 to 2022 to complete this project. These parquet files were uploaded
+to an AWS S3 Bucket that was made publicly accessible. Next, I used the AWS S3 URL link
+in Databricks to extract the data and perform analysis and transformation. This made it
+possible for me to perform subsequent transformation and analysis on the data.
+
+**Future Scope:**
  The future scope of this project is to use machine learning models like Logistic
 Regression, Decision Tree Classifier, Random Forest Regression and Linear Regression and
 its variant Boosted Linear Regression to predict the departure delay of flights. If given the
