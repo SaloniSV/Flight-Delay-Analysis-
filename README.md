@@ -1,25 +1,6 @@
 # Flight-Delay-Analysis
 
-Introduction
 
-Flight delays have become a very important subject for air transportation all over the
-world because of the associated financial losses that the aviation industry is continuously
-going through.
-These delays not only cause inconvenience to the airlines, but also to passengers.
-With the increased travel time comes and increase in expenses associated to food and
-lodging, this results in added stress among passengers, but this doesn't account for the
-growing distrust towards the airlines, who also suffer from extra costs such as those
-associated to their crews, aircraft repositioning, increased fuel consumption while trying to
-reduce their elapse time, and many others that tarnish the airlines reputation and often result
-in the loss of demand by passengers.
-The reasons for these delays vary a lot going from air congestion to weather
-conditions, mechanical problems, difficulties while boarding passengers, and simply the
-airline's inability to handle the demand given its capacity.
-So what can be done as a passenger to avoid delayed flights? Is it possible to know if
-your flight will be delayed before it comes up on the departure boards?
-In this project, I have used PySpark to explore data and visualize insights to answer
-some questions related to these flight delays. As a customer, we can stay informed about the
-airline we choose, and its delay expectancy.
 
 **Introduction**
 Flight delays have become a very important subject for air transportation all over the
